@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ASSETS/Enemy2/ENEMY 2 WINGS 2.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/Enemy2/ΕΝΕΜΥ 2A ANIMATION.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/Enemy2/ΕΝΕΜΥ 2B  ANIMATION.png" type="Texture" id=3]
+[ext_resource path="res://Enemy body.gd" type="Script" id=4]
+[ext_resource path="res://ASSETS/Enemy2/ENEMY 2 WINGS 1.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Wings",
+"speed": 15.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24, 56 )
+
+[node name="enemy2" type="KinematicBody2D"]
+collision_layer = 2147483664
+collision_mask = 3
+script = ExtResource( 4 )
+
+[node name="Wings" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 1 )
+animation = "Wings"
+playing = true
+
+[node name="Body" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 2 )
+animation = "walk"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, -16 )
+shape = SubResource( 3 )
+
+[node name="floor_checker" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 90 )
+collision_mask = 2

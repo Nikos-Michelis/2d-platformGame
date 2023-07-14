@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ASSETS/Enemy1/ENEMY 0 right (SKETCH).png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/Enemy1/ENEMY 3 left ANIMATION.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/Enemy1/ENEMY 1 right  ANIMATION.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/Enemy1/ENEMY 0 left (SKETCH).png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/Enemy1/ENEMY 1b right  ANIMATION.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/Enemy1/ENEMY 2 left  ANIMATION.png" type="Texture" id=6]
+[ext_resource path="res://enemy.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 72, 120 )
+
+[node name="enemy" type="KinematicBody2D"]
+collision_layer = 2147483664
+collision_mask = 3
+script = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "Walk"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8, -40 )
+shape = SubResource( 2 )
+
+[node name="floor_checker" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 100 )
+collision_mask = 2
