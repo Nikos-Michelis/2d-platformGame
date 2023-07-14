@@ -8,6 +8,6 @@
 <h1>Wedge Enemy</h1>
 <img src="https://github.com/Nikos-Michelis/2d-platformGame/assets/92666389/e7e4fc28-2d7c-414a-9c69-98eb126967d1" width="800" height="800">
 <h1>Gameplay</h1>
-<img src="https://github.com/Nikos-Michelis/2d-platformGame/assets/92666389/365e4736-ed65-40e9-8f47-73362c9f694b" width="1920" height="400">
+<img src="https://github.com/Nikos-Michelis/2d-platformGame/assets/92666389/365e4736-ed65-40e9-8f47-73362c9f694b" width="1920" height="500">
 <h1>Checkpoint</h1>
-<img src="https://github.com/Nikos-Michelis/2d-platformGame/assets/92666389/53412a39-afa3-447d-adf0-dd978194e2d9" width="1920" height="400">
+<img src="https://github.com/Nikos-Michelis/2d-platformGame/assets/92666389/53412a39-afa3-447d-adf0-dd978194e2d9" width="1920" height="500">
